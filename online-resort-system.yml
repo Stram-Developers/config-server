@@ -13,8 +13,6 @@ mail:
   smtp:
     debug: true
 spring:
-  application:
-    name: comfort-inn
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     password: root

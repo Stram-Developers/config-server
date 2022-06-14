@@ -1,1 +1,56 @@
-s
+server:
+  port: 8080
+
+app:
+  jwt-expiration-milliseconds: '604800000 '
+  jwt-secret: JWTSecretKey
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG
+mail:
+  smtp:
+    debug: true
+spring:
+  application:
+    name: comfort-inn
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: root
+    url: jdbc:mysql://localhost:3306/resort?createDatabaseIfNotExist=true&useUnicode=true
+    username: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+  mail:
+    host: smtp.gmail.com
+    password: eyzzjntmehsmrkpx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          socketFactory:
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
+            port: 465
+          starttls:
+            enable: true
+    username: stramdevelopers36@gmail.com
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      default-zone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true

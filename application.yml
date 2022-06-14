@@ -1,8 +1,36 @@
+server:
+  port: 8080
+file:
+  upload:
+    location: C:/Users/2107110/uploads
+spring:
+  datasource:
+    password: root
+    url: jdbc:mysql://localhost:3306/resort?createDatabaseIfNotExist=true&useUnicode=true
+    username: root
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+  mvc:
+    format:
+      date: yyyy-MM-dd
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
 eureka:
   client:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      default-zone: http://localhost:8761/eureka/
   instance:
-    hostname: localhost
+    prefer-ip-address: true

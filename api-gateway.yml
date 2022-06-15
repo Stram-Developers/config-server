@@ -4,8 +4,8 @@ server:
 cloud:
   gateway:
     routes:
-    - id: COMFORT-INN
-      uri: lb://COMFORT-INN
+    - id: online-resort-system
+      uri: lb://online-resort-system
       predicates:
       - Path=/api/**
 
